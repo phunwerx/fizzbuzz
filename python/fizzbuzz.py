@@ -14,17 +14,14 @@ import sys
 class FizzBuzz:
     def run(self):
         for i in range(1,100+1):
-            if ((i % 3) == 0):
-                sys.stdout.write("Fizz")
-	    if ((i % 5) == 0):
-	        sys.stdout.write("Buzz")
-	    if ((i % 3) and (i % 5)):
-	        sys.stdout.write("%d" % i)
+            fizzy, buzzy = ((i % 3) == 0),((i % 5) == 0)
+            if fizzy: sys.stdout.write("Fizz")
+            if buzzy: sys.stdout.write("Buzz")
+            if not (fizzy or buzzy): sys.stdout.write("%d" % i) 
 	    sys.stdout.write('\n')
 
 def main():
-    f=FizzBuzz()
-    f.run();
+    FizzBuzz().run();
 
 if __name__ == "__main__":
     main()

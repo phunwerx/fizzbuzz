@@ -12,8 +12,7 @@
 class FizzBuzz
   def run
     1.upto(100) do |i|
-      fizzy = (i % 3).zero?
-      buzzy = (i % 5).zero?
+      fizzy, buzzy = (i%3).zero?, (i%5).zero?
       print 'Fizz' if fizzy
       print 'Buzz' if buzzy
       print i unless fizzy or buzzy
